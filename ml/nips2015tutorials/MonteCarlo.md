@@ -8,6 +8,10 @@
 
 \theta
 
+$\theta$
+
+$$\theta$$
+
 ```
 
 `math \theta `
