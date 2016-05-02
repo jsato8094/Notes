@@ -41,7 +41,7 @@ reduce(String key, Iterator values):
 ### Types
 
 入力のkey/valueは出力のkey/valueの型とは異なる．
-文字数カウントなら，入力：文書名/文書，出力：単語/カウント．
+文字数カウントなら，入力：文書名/文書，出力：単語/カウント．
 
 中間のkey/valueは，出力のkey/valueの型と同じ．
 
@@ -125,7 +125,7 @@ Rに分割するためのもの．デフォルトはハッシュ（e.g. `hash(ke
 
 ### Combiner Function
 
-文字カウントの例でいうと，map処理でめっちゃ出てくる`<the, 1>`のような中間キーをそのまま扱うと，`the`を割り当てられたreduce担当workerからほぼすべてのmap担当workerを参照しないといけなくなるので，ネットワークの帯域を消費する．
+文字カウントの例でいうと，map処理でめっちゃ出てくる`<the, 1>`のような中間キーをそのまま扱うと，`the`を割り当てられたreduce担当workerからほぼすべてのmap担当workerを参照しないといけなくなるので，ネットワークの帯域を消費する．
 そこで，オプションでCombiner functionを使うと，map-->combinerで一旦`the`を一つの中間ファイルにまとめる-->reduceに送信，としてくれるので帯域を節約できる．
 
 ### Input and Output Types
